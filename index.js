@@ -29,6 +29,12 @@ function add(todo) {
     li.innerText = todoText;
     li.classList.add("list-group-item");
 
+    li.addEventListener("touchstart", function(event){
+        event.preventDefault();
+        li.remove();
+        saveData();
+    })
+
     li.addEventListener("contextmenu", function(event){
         event.preventDefault();
         li.remove();
